@@ -1,0 +1,12 @@
+{
+  "name": "spendture-fullstack",
+  "scripts": {
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
+    "frontend": "cd .. && npm run dev",
+    "backend": "cd backend && npm run dev",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

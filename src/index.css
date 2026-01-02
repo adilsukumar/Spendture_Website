@@ -1,0 +1,368 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Spendture Premium Brand Colors - Neo-Financial Palette - HSL Only */
+    --deep-teal: 175 45% 30%;       /* Softer teal for light mode */
+    --dark-teal: 180 40% 22%;       /* Deeper for accents */
+    --soft-aqua: 172 54% 50%;       /* Slightly darker for light mode contrast */
+    --emerald: 155 55% 40%;         /* Warm, inviting green */
+    --forest-green: 160 50% 32%;    /* Financial stability */
+    --mint: 160 50% 90%;            /* Soft background tint */
+    --warm-yellow: 44 95% 52%;      /* Premium gold */
+    --golden-amber: 42 90% 48%;     /* Refined CTA gold */
+    --pale-lemon: 48 100% 94%;      /* Cream warmth */
+    --light-grey: 150 15% 96%;      /* Warm grey with green tint */
+    --off-white: 150 20% 98%;       /* Warm white */
+    --mid-grey: 160 8% 50%;         /* Balanced mid-tone */
+    --charcoal: 200 20% 12%;        /* Warm dark */
+
+    /* Premium Light Mode - Warm & Inviting Canvas */
+    --background: 150 25% 97%;
+    --foreground: 180 30% 15%;
+
+    --card: 150 30% 99%;
+    --card-foreground: 180 30% 15%;
+
+    --popover: 150 30% 99%;
+    --popover-foreground: 180 30% 15%;
+
+    /* Warm Teal - Primary */
+    --primary: 175 45% 30%;
+    --primary-foreground: 150 25% 97%;
+
+    /* Soft Aqua - Secondary */
+    --secondary: 165 40% 92%;
+    --secondary-foreground: 175 45% 25%;
+
+    /* Golden Amber - Accent (CTA) */
+    --accent: 42 90% 48%;
+    --accent-foreground: 180 30% 12%;
+
+    --muted: 155 25% 92%;
+    --muted-foreground: 170 20% 40%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 20% 88%;
+    --input: 155 25% 94%;
+    --ring: 175 45% 30%;
+
+    --radius: 0.875rem;
+
+    /* Premium Light Mode Design Tokens - Warm greens & golds */
+    --gradient-hero: linear-gradient(135deg, hsl(165 35% 95%) 0%, hsl(155 30% 92%) 50%, hsl(48 60% 96%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(42 90% 48%) 0%, hsl(38 95% 52%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(150 25% 97%) 0%, hsl(155 30% 94%) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(175 45% 30%) 0%, hsl(165 50% 40%) 50%, hsl(155 55% 50%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(150 30% 99%) 0%, hsl(155 25% 97%) 100%);
+    
+    --shadow-elegant: 0 4px 24px -4px hsl(170 30% 30% / 0.1), 0 2px 8px -2px hsl(170 30% 30% / 0.06);
+    --shadow-glow: 0 8px 32px -4px hsl(172 54% 50% / 0.2), 0 4px 16px -4px hsl(175 45% 30% / 0.12);
+    --shadow-glow-cta: 0 8px 24px -4px hsl(42 90% 48% / 0.35), 0 4px 12px -4px hsl(42 90% 48% / 0.25);
+    --shadow-soft: 0 2px 12px -2px hsl(170 20% 20% / 0.08);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Warmer, inviting dark theme - "Financial Wellness" palette */
+    /* Rich navy-teal instead of pure black for approachable feel */
+    --background: 200 25% 10%;
+    --foreground: 160 20% 95%;
+
+    /* Cards with warm undertone - elevated surfaces */
+    --card: 195 22% 14%;
+    --card-foreground: 160 20% 95%;
+
+    --popover: 195 22% 14%;
+    --popover-foreground: 160 20% 95%;
+
+    /* Soft Aqua - Primary (growth, prosperity) */
+    --primary: 172 54% 63%;
+    --primary-foreground: 160 20% 95%;
+
+    /* Deeper teal - Secondary (stability, trust) */
+    --secondary: 180 35% 25%;
+    --secondary-foreground: 160 20% 95%;
+
+    /* Golden Amber - Accent (wealth, premium) */
+    --accent: 43 90% 55%;
+    --accent-foreground: 200 25% 10%;
+
+    /* Warmer muted tones */
+    --muted: 195 18% 18%;
+    --muted-foreground: 165 15% 70%;
+
+    /* Softer borders with teal hint */
+    --border: 190 15% 22%;
+    --input: 195 18% 20%;
+    --ring: 172 54% 63%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 160 20% 95%;
+    
+    /* Premium Dark Mode Design Tokens - Warmer gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(195 30% 12%) 0%, hsl(190 25% 15%) 50%, hsl(200 25% 8%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(43 90% 55%) 0%, hsl(38 95% 50%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(200 25% 8%) 0%, hsl(195 22% 11%) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(185 40% 18%) 0%, hsl(180 45% 25%) 50%, hsl(172 54% 63%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(195 22% 12%) 0%, hsl(190 20% 15%) 100%);
+    
+    /* Warmer, glowing shadows */
+    --shadow-elegant: 0 8px 32px -4px hsl(190 30% 5% / 0.5), 0 4px 16px -4px hsl(172 54% 63% / 0.1);
+    --shadow-glow: 0 8px 40px -4px hsl(172 54% 63% / 0.35), 0 4px 20px -4px hsl(180 40% 40% / 0.2);
+    --shadow-glow-cta: 0 8px 30px -4px hsl(43 90% 55% / 0.45), 0 4px 15px -4px hsl(38 95% 50% / 0.3);
+    --shadow-soft: 0 4px 16px -2px hsl(190 30% 5% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Modern scrollbar - Light Mode */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--deep-teal) / 0.5), hsl(var(--soft-aqua) / 0.5));
+    border-radius: 10px;
+    border: 2px solid hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(var(--deep-teal) / 0.7), hsl(var(--soft-aqua) / 0.7));
+  }
+
+  /* Dark Mode scrollbar */
+  .dark ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--soft-aqua) / 0.4), hsl(var(--deep-teal) / 0.4));
+    border: 2px solid hsl(var(--background));
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(var(--soft-aqua) / 0.6), hsl(var(--deep-teal) / 0.6));
+  }
+
+  /* Selection styling */
+  ::selection {
+    background: hsl(var(--soft-aqua) / 0.3);
+    color: hsl(var(--foreground));
+  }
+
+  .dark ::selection {
+    background: hsl(var(--soft-aqua) / 0.4);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  /* Animated Gradient Backgrounds */
+  .gradient-animate-slow {
+    background: linear-gradient(
+      -45deg,
+      hsl(var(--background)),
+      hsl(var(--soft-aqua) / 0.05),
+      hsl(var(--deep-teal) / 0.1),
+      hsl(var(--emerald) / 0.05)
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  .gradient-animate-medium {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--deep-teal) / 0.1),
+      hsl(var(--emerald) / 0.05),
+      hsl(var(--background)),
+      hsl(var(--soft-aqua) / 0.1)
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+  }
+
+  .gradient-animate-subtle {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--background)),
+      hsl(var(--mint) / 0.05),
+      hsl(var(--soft-aqua) / 0.05),
+      hsl(var(--background))
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Gradient Mesh Background */
+  .gradient-mesh {
+    background: 
+      radial-gradient(circle at 20% 50%, hsl(var(--soft-aqua) / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, hsl(var(--emerald) / 0.25) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, hsl(var(--deep-teal) / 0.2) 0%, transparent 50%);
+    background-size: 200% 200%;
+    animation: meshMove 15s ease infinite;
+  }
+
+  @keyframes meshMove {
+    0%, 100% {
+      background-position: 0% 0%, 100% 100%, 50% 0%;
+    }
+    33% {
+      background-position: 100% 0%, 0% 100%, 100% 50%;
+    }
+    66% {
+      background-position: 0% 100%, 100% 0%, 0% 50%;
+    }
+  }
+
+  /* Enhanced Micro-interactions */
+  .hover-lift {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .icon-pulse {
+    animation: iconPulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes iconPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.12);
+      opacity: 0.85;
+    }
+  }
+
+  .button-bounce:active {
+    transform: scale(0.96);
+    transition: transform 0.1s ease;
+  }
+
+  /* Focus states for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--soft-aqua));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid hsl(var(--soft-aqua));
+    outline-offset: 4px;
+  }
+
+  /* Skip to content link for accessibility */
+  .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+  }
+
+  .skip-to-content:focus {
+    top: 0;
+  }
+
+  .glow-on-hover {
+    transition: box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .glow-on-hover:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-3px);
+  }
+
+  /* Modern card animations */
+  .card-hover {
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: var(--gradient-card);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow);
+    border-color: hsl(var(--soft-aqua) / 0.6);
+  }
+
+  /* Glass morphism effect */
+  .glass-effect {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .dark .glass-effect {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .gradient-animate-slow,
+    .gradient-animate-medium,
+    .gradient-animate-subtle,
+    .gradient-mesh {
+      animation: none;
+    }
+    
+    .hover-lift:hover,
+    .glow-on-hover:hover,
+    .card-hover:hover {
+      transform: none;
+    }
+    
+    .icon-pulse {
+      animation: none;
+    }
+  }
+}
